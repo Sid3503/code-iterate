@@ -2,6 +2,8 @@
 
 A lightweight AI-powered code assistant that helps you iterate and improve your code based on natural language prompts.
 
+![Image](https://github.com/user-attachments/assets/64a54047-7c03-4c1e-b706-a57ff348e5b2)
+
 ## Features
 
 - **Code Editor**: Write or paste your code in a syntax-highlighted editor
