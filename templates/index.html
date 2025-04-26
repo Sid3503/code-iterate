@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Iterator Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="app-header">
+            <div class="logo-container">
+                <i class="fas fa-code logo-icon"></i>
+                <h1>Code Iterator</h1>
+            </div>
+            <p>Refine your code with AI-powered suggestions</p>
+        </div>
+        
+        <div class="main-content">
+            <div class="code-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-code"></i> Your Code</h2>
+                    <div class="language-selector">
+                        <label for="languageSelect">Language</label>
+                        <select id="languageSelect">
+                            <option value="javascript">JavaScript</option>
+                            <option value="python">Python</option>
+                            <option value="c">C</option>
+                            <option value="cpp">C++</option>
+                            <option value="java">Java</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="code-editor-container">
+                    <textarea id="codeEditor"></textarea>
+                </div>
+                <div class="code-actions">
+                    <button id="runButton" class="primary-button">
+                        <i class="fas fa-play"></i> Run Code
+                    </button>
+                </div>
+                <div class="output-container">
+                    <h3><i class="fas fa-terminal"></i> Output</h3>
+                    <div id="outputDisplay" class="output-display">
+                        <pre id="outputText">Output will appear here...</pre>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="prompt-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-magic"></i> What would you like to change?</h2>
+                </div>
+                <div class="prompt-input-container">
+                    <textarea id="promptInput" placeholder="Describe what changes you want to make to the code..."></textarea>
+                    <button id="generateButton" class="primary-button">
+                        <i class="fas fa-wand-magic-sparkles"></i> Generate Suggestions
+                    </button>
+                </div>
+            </div>
+            
+            <div class="suggestions-section" id="suggestionsSection" style="display: none;">
+                <div class="section-header">
+                    <h2><i class="fas fa-lightbulb"></i> AI Suggestions</h2>
+                </div>
+                <div class="explanation-container">
+                    <h3><i class="fas fa-info-circle"></i> Explanation</h3>
+                    <div id="explanationText" class="explanation-text"></div>
+                </div>
+                <div class="suggested-code-container">
+                    <button id="integrateButton" class="primary-button">
+                        <i class="fas fa-check"></i> Integrate Code
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="loading-overlay" id="loadingOverlay">
+            <div class="spinner"></div>
+            <p>Generating suggestions...</p>
+        </div>
+        
+        <footer class="app-footer">
+            <p>Powered by <a href="https://ai.google.dev/" target="_blank">Google Gemini</a> | <a href="https://github.com/yourusername/code-iterator" target="_blank">GitHub</a></p>
+        </footer>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/css/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/clike/clike.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html> 
