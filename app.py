@@ -203,9 +203,5 @@ Please provide the modified code with explanations of the changes. Format your r
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
-# For local development
 if __name__ == '__main__':
-    app.run(debug=True)
-
-# For Vercel
-app = app 
+    app.run(debug=True) 
