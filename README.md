@@ -45,7 +45,3 @@ A lightweight AI-powered code assistant that helps you iterate and improve your 
 - **Frontend**: HTML, CSS, JavaScript
 - **Code Editor**: CodeMirror
 - **AI**: Google Gemini API
-
-## License
-
-MIT 
